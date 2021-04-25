@@ -42,12 +42,16 @@ function addListItem() {
 }
 
 btnUpdate.addEventListener('click', function() {
-    var item1 = list.firstElementChild;
-    var newListElement = createNewNode();
+    if(currValue !== undefined && currValue !== null && currValue !== ''){
+        var item1 = list.firstElementChild;
+        var newListElement = createNewNode();
 
-    list.replaceChild(newListElement,item1);
-    tbox.value = ''
-    currValue = ''
+        list.replaceChild(newListElement,item1);
+        tbox.value = ''
+        currValue = ''
+    } else {
+        alert('Please enter a value to update')
+    }    
 });
 
 btnDelete.addEventListener('click',function() {
